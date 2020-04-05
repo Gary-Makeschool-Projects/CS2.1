@@ -63,6 +63,7 @@ def bubble_sort(items):
         # for each item in the array
         for i in range(last):
             # bitwise calculation
+            # greater()
             if items[i] > items[i+1]:
                 # swap values
                 swap(items, i, i+1)
@@ -87,6 +88,8 @@ def selection_sort(items):
         # unsorted array
         min_idx = i
         for j in range(i+1, length):
+            # bitwise calculation
+            # greater()
             if items[min_idx] > items[j]:
                 # min index
                 min_idx = j
@@ -108,6 +111,8 @@ def insertion_sort(items):
         # greater than key, to one position ahead
         # of their current position
         j = i-1
+        # bitwise calculation
+        # greater()
         while j >= 0 and key < items[j]:
             items[j+1] = items[j]
             j -= 1
