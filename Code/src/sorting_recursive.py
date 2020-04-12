@@ -83,7 +83,6 @@ def merge(items1, items2):
     return items3
 
 
-
 @time_it  # benchmark
 def merge_tonic(items1, items2):
     """Merge two given list of items. This approach I form two bitonic arrays
@@ -166,9 +165,8 @@ def split_sort_merge(items):
 
     # split
     m = split(items)
-    l = len(items)
-    lh = items[0:m]
-    rh = items[m:l]
+    lh = items[:m]
+    rh = items[m:]
 
     # sort
     counting_sort_int(lh)  # O(n)
