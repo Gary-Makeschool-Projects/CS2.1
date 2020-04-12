@@ -1,4 +1,5 @@
-def determine(a, b):
+
+def greater(a, b):
     if isinstance(a, int) and isinstance(b, int):
         ltb = ~a & b
         gtb = a & ~b
