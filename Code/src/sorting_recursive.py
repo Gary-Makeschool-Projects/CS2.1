@@ -8,7 +8,6 @@ from sorting_iterative import bubble_sort, insertion_sort, selection_sort
 from sorting_integer import counting_sort_int
 from utils.benchmark import time_it
 from utils.swapitems import swap
-#################### helper functions ########################
 
 
 @time_it  # benchmark
@@ -83,8 +82,6 @@ def merge(items1, items2):
 
     return items3
 
-
-""" A more memory efficient merge algorithm """
 
 
 @time_it  # benchmark
