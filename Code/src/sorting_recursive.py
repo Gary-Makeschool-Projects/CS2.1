@@ -104,7 +104,6 @@ def merge_tonic(items1, items2):
     for i in range(x):
 
         if (items1[n - i - 1] > items2[i]):
-            # swap
             items1[n - i - 1], items2[i] = items2[i], items1[n - i - 1]
 
     # Sort the array inplace
@@ -118,8 +117,7 @@ def merge_tonic(items1, items2):
 
             if (items1[index] > items1[index + gap]):
                 # swap
-                items1[index], items1[index +
-                                      gap] = items1[index + gap], items1[index]
+                swap(items1, index, index+gap)
 
             index += 1
 
@@ -134,8 +132,7 @@ def merge_tonic(items1, items2):
         while index + gap < m:
             if (items2[index] > items2[index + gap]):
                 # swap
-                items2[index], items2[index +
-                                      gap] = items2[index + gap], items2[index]
+                swap(items2, index, index+gap)
 
             index += 1
 
