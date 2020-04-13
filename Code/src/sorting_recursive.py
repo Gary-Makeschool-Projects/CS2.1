@@ -238,8 +238,8 @@ def partition(items, l, h):
 
         else:
             break
-
-    items[l], items[high] = items[high], items[l]
+    # swap
+    swap(items, l, high)
 
     return high
 
