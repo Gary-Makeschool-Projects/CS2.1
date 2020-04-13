@@ -7,10 +7,13 @@ from random import randint
 from sorting_iterative import bubble_sort, insertion_sort, selection_sort
 from sorting_integer import counting_sort_int
 from utils.benchmark import time_it
+from utils.bitops import greater
 from utils.swapitems import swap
 
 
-@time_it  # benchmark
+#################### helper functions ########################
+
+
 def next_gap(gap):
     """Reducing the gap by a factor of 2"""
 
@@ -24,7 +27,7 @@ def next_gap(gap):
 
 
 def split(arr):
-    """Get the midpoint of an array"""
+    """Return the midpoint of an array"""
 
     l = len(arr)
 
@@ -185,7 +188,7 @@ def merge_sort(items):
     elements in the given arrays"""
 
     # base case and only case
-    if len(items) > 1:
+    if greater(len(items), 1):
 
         # split the array down the middle
         m = split(items)
