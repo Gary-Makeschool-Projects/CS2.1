@@ -9,7 +9,7 @@ class PrefixTreeNode(object):
 
     # Choose a type of data structure to store children nodes in
     # Hint: Choosing list or dict affects implementation of all child methods
-    CHILDREN_TYPE = dict()
+    CHILDREN_TYPE = dict
 
     def __init__(self, character=None):
         """Initialize this prefix tree node with the given character value, an
@@ -17,7 +17,7 @@ class PrefixTreeNode(object):
         # Character that this node represents
         self.character = character
         # Data structure to associate character keys to children node values
-        self.children = PrefixTreeNode.CHILDREN_TYPE
+        self.children = PrefixTreeNode.CHILDREN_TYPE()
         # Marks if this node terminates a string in the prefix tree
         self.terminal = False
 
@@ -47,8 +47,7 @@ class PrefixTreeNode(object):
         """Add the given character and child node as a child of this node, or
         raise ValueError if given character is amongst this node's children."""
         if not self.has_child(character):
-            # TODO: Add given character and child node to this node's children
-            pass
+            self.children[character] = child_node
         else:
             raise ValueError(f'Child exists for character {character!r}')
 
