@@ -88,7 +88,7 @@ class PrefixTree(object):
         index = 0
 
         # loop through letters of string
-        while index < len(string) and node.has_child(string[index]) is True:
+        while index < len(string) and node.has_child(string[index]):
             # traverse
             node = node.get_child(string[index])
             index += 1
