@@ -258,6 +258,6 @@ def quick_sort(items, low=None, high=None):
     if low < high:
         # partition the items
         p = partition(items, low, high)
-        # sort both half of the partition recursively
+        # sort both halfs
         quick_sort(items, low, p-1)
         quick_sort(items, p+1, high)

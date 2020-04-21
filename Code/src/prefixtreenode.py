@@ -21,21 +21,21 @@ class PrefixTreeNode(object):
         # Marks if this node terminates a string in the prefix tree
         self.terminal = False
 
-    def is_terminal(self):
+    def is_terminal(self) -> bool:
         """Return True if this prefix tree node terminates a string."""
         return self.terminal
 
-    def num_children(self):
+    def num_children(self) -> int:
         """Return the number of children nodes this prefix tree node has."""
         return len(self.children.keys())
 
-    def has_child(self, character):
+    def has_child(self, character) -> bool:
         """Return True if this prefix tree node has a child node that
         represents the given character amongst its children."""
 
-        return True if self.children.get(character, False) else False
+        return character in self.children
 
-    def get_child(self, character):
+    def get_child(self, character) -> str:
         """Return this prefix tree node's child node that represents the given
         character if it is amongst its children, or raise ValueError if not."""
         if self.has_child(character):
@@ -43,7 +43,7 @@ class PrefixTreeNode(object):
         else:
             raise ValueError(f'No child exists for character {character!r}')
 
-    def add_child(self, character, child_node):
+    def add_child(self, character, child_node) -> None:
         """Add the given character and child node as a child of this node, or
         raise ValueError if given character is amongst this node's children."""
         if not self.has_child(character):
@@ -58,3 +58,8 @@ class PrefixTreeNode(object):
     def __str__(self):
         """Return a string view of this prefix tree node."""
         return f'({self.character})'
+
+
+if __name__ == "__main__":
+    n = PrefixTreeNode('A')
+    print(n.children)

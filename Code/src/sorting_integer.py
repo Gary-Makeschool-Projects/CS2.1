@@ -106,6 +106,8 @@ def counting_sort_strings(items):
 def bucket_sort(arr):
     # get hash codes
     code = hashing(arr)
+
+    # list of buckets
     buckets = [list() for _ in range(code[1])]
 
     # distrubute items into buckets
@@ -121,7 +123,7 @@ def bucket_sort(arr):
     # merge the buckets: O(n)
     for b in range(len(buckets)):
         for v in buckets[b]:
-            A[ndx] = v
+            arr[ndx] = v
             ndx += 1
 
 
